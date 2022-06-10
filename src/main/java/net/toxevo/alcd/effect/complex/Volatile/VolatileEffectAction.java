@@ -25,7 +25,7 @@ public class VolatileEffectAction {
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> entityList = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(
 						8 / 2d), e -> true).stream()
-						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+						.sorted(Comparator.comparingDouble(_entity -> _entity.distanceToSqr(_center))).toList();
 				for (Entity entityIterator : entityList) {
 					if (entityIterator instanceof LivingEntity lEntity)
 						lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(),
