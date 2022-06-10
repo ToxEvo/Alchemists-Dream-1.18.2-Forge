@@ -14,7 +14,9 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.toxevo.alcd.effect.ModEffects;
 import net.toxevo.alcd.item.ModItems;
+import net.toxevo.alcd.potion.ModPotions;
 import org.slf4j.Logger;
 
 import java.util.stream.Collectors;
@@ -33,6 +35,9 @@ public class ALCD
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+
+        ModEffects.register(eventBus);
+        ModPotions.register(eventBus);
 
         eventBus.addListener(this::setup);
 

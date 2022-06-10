@@ -1,5 +1,6 @@
 package net.toxevo.alcd.item;
 
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -13,7 +14,9 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, ALCD.MOD_ID);
 
     public static final RegistryObject<Item> VOLATILE_PETAL = ITEMS.register("volatile_petal",
-            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ALCD_TAB)));
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
