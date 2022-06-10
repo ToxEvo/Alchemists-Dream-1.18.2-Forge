@@ -4,6 +4,9 @@
   "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
   "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
   "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze",
+  "item.minecraft.potion.effect.volatile_potion": "Volatile Potion",
+  "item.minecraft.splash_potion.effect.volatile_potion": "Splash Potion of Volatility",
+  "item.minecraft.lingering_potion.effect.volatile_potion": "Lingering Potion of Volatility",
 
 
   "itemGroup.alcdtab": "Alchemist's Dream",
