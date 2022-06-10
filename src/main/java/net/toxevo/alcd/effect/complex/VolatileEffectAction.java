@@ -23,11 +23,13 @@ public class VolatileEffectAction {
 		if ((entity instanceof LivingEntity _entity ? _entity.getHealth() : -1) == 0) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> entityList = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream()
+				List<Entity> entityList = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(
+						8 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : entityList) {
 					if (entityiterator instanceof LivingEntity lEntity)
-						lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(), 100, 0, (false), (true)));
+						lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(),
+								100, 0, (false), (true)));
 				}
 			}
 		}
