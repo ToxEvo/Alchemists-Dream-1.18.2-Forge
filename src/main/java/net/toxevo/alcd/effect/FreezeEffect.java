@@ -2,6 +2,7 @@ package net.toxevo.alcd.effect;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 
 public class FreezeEffect extends MobEffect {
@@ -19,8 +20,8 @@ public class FreezeEffect extends MobEffect {
 
             entity.teleportTo(x, y, z);
             entity.setDeltaMovement(0, 0, 0);
-        }
         super.applyEffectTick(entity, amplifier);
+        }
     }
 
     @Override
