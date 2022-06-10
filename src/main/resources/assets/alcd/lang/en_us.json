@@ -8,5 +8,7 @@
 
   "itemGroup.alcdtab": "Alchemist's Dream",
 
-  "effect.alcd.freeze": "Freeze"
+  "effect.alcd.freeze": "Freeze",
+  "effect.alcd.volatile": "Volatile"
+
 }
