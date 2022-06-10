@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.toxevo.alcd.ALCD;
-import net.toxevo.alcd.effect.complex.VolatileEffect;
+import net.toxevo.alcd.effect.complex.Volatile.VolatileEffect;
 
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS

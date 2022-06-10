@@ -1,4 +1,4 @@
-package net.toxevo.alcd.effect.complex;
+package net.toxevo.alcd.effect.complex.Volatile;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
