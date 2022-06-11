@@ -16,6 +16,7 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.toxevo.alcd.effect.ModEffects;
 import net.toxevo.alcd.item.ModItems;
+import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.potion.ModPotions;
 import org.slf4j.Logger;
 
@@ -38,6 +39,8 @@ public class ALCD
 
         ModEffects.register(eventBus);
         ModPotions.register(eventBus);
+
+        ModParticles.register(eventBus);
 
         eventBus.addListener(this::setup);
 

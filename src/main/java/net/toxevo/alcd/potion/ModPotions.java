@@ -18,7 +18,8 @@ public class ModPotions {
             () -> new Potion(new MobEffectInstance(ModEffects.FREEZE.get(), 200, 0)));
 
     public static final RegistryObject<Potion> VOLATILE_POTION = POTIONS.register("volatile_potion",
-            () -> new Potion(new MobEffectInstance(ModEffects.VOLATILE.get(), 200, 0)));
+            () -> new Potion(new MobEffectInstance(ModEffects.VOLATILE.get(), 200, 0,
+                    false, false)));
 
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);

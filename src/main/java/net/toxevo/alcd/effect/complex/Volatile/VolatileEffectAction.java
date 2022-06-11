@@ -15,13 +15,12 @@ import java.util.List;
 import java.util.Comparator;
 
 public class VolatileEffectAction {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void action(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (world instanceof Level _level && !_level.isClientSide())
 			_level.explode(null, x, y, z, 1, Explosion.BlockInteraction.NONE);
 		if ((entity instanceof LivingEntity _entity ? _entity.getHealth() : -1) == 0) {
-			{
 				final Vec3 center = new Vec3(x, y, z);
 				List<Entity> entityList = world.getEntitiesOfClass(Entity.class, new AABB(center, center).inflate(
 						8 / 2d), e -> true).stream()
@@ -29,9 +28,8 @@ public class VolatileEffectAction {
 				for (Entity entityIterator : entityList) {
 					if (entityIterator instanceof LivingEntity lEntity)
 						lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(),
-								100, 0, (false), (true)));
+								100, 0, (false), (false)));
 				}
-			}
 		}
 	}
 }
