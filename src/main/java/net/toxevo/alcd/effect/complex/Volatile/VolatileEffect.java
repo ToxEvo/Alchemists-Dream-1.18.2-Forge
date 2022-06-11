@@ -33,6 +33,17 @@ public class VolatileEffect extends MobEffect {
                     0.15d);
             }
         }
+        if (world instanceof ServerLevel level)
+            level.sendParticles(ModParticles.VOLATILE_PARTICLES.get(),
+                    x,
+                    y + 3,
+                    z,
+                    15,
+                    0,
+                    0,
+                    0,
+                    0);
+
     }
 
     @Override
