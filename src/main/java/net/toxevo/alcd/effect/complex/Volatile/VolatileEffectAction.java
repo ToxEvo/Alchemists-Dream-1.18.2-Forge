@@ -18,17 +18,13 @@ public class VolatileEffectAction {
 	public static void action(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-
 		if (world instanceof Level level && !level.isClientSide())
 			level.explode(null, x, y, z, 1, Explosion.BlockInteraction.NONE);
-
 		if ((entity instanceof LivingEntity _entity ? _entity.getHealth() : -1) == 0) {
 				final Vec3 center = new Vec3(x, y, z);
-
 				List<Entity> entityList = world.getEntitiesOfClass(Entity.class, new AABB(center, center)
 								.inflate(8 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entity -> _entity.distanceToSqr(center))).toList();
-
 				for (Entity entityIterator : entityList) {
 					if (entityIterator instanceof LivingEntity lEntity)
 						lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(),
