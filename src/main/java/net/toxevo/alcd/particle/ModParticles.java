@@ -15,6 +15,9 @@ public class ModParticles {
     public static final RegistryObject<SimpleParticleType> VOLATILE_PARTICLES =
             PARTICLE_TYPES.register("volatile_particles", () -> new SimpleParticleType(true));
 
+    public static final RegistryObject<SimpleParticleType> FREEZE_PARTICLES =
+            PARTICLE_TYPES.register("freeze_particles", () -> new SimpleParticleType(true));
+
     public static void register(IEventBus eventBus) {
         PARTICLE_TYPES.register(eventBus);
     }

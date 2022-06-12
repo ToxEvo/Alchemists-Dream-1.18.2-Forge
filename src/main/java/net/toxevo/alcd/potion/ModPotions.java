@@ -15,7 +15,8 @@ public class ModPotions {
             = DeferredRegister.create(ForgeRegistries.POTIONS, ALCD.MOD_ID);
 
     public static final RegistryObject<Potion> FREEZE_POTION = POTIONS.register("freeze_potion",
-            () -> new Potion(new MobEffectInstance(ModEffects.FREEZE.get(), 200, 0)));
+            () -> new Potion(new MobEffectInstance(ModEffects.FREEZE.get(), 200, 0,
+                    false, false)));
 
     public static final RegistryObject<Potion> VOLATILE_POTION = POTIONS.register("volatile_potion",
             () -> new Potion(new MobEffectInstance(ModEffects.VOLATILE.get(), 200, 0,

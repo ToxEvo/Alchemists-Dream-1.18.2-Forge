@@ -17,7 +17,6 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ALCD_TAB)));
 
 
-
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
     }

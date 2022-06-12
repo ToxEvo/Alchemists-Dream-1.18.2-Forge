@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.toxevo.alcd.ALCD;
 import net.toxevo.alcd.particle.ModParticles;
+import net.toxevo.alcd.particle.custom.FreezeParticles;
 import net.toxevo.alcd.particle.custom.VolatileParticles;
 
 @Mod.EventBusSubscriber(modid = ALCD.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -15,5 +16,8 @@ public class ModEventBusEvents {
     public static void registerParticleFactories(final ParticleFactoryRegisterEvent event) {
         Minecraft.getInstance().particleEngine.register(ModParticles.VOLATILE_PARTICLES.get(),
                 VolatileParticles.Provider::new);
+
+        Minecraft.getInstance().particleEngine.register(ModParticles.FREEZE_PARTICLES.get(),
+                FreezeParticles.Provider::new);
     }
 }

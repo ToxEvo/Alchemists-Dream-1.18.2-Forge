@@ -14,7 +14,7 @@ public class VolatileEffect extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
-        VolatileEffectAction.action(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity);
+        VolatileEffectAction.action(entity.level, entity.getX(), entity.getY(), entity.getZ(), entity, amplifier);
         spawnVolatileParticle(entity.level, entity.getX(), entity.getY(), entity.getZ());
     }
 
@@ -43,11 +43,15 @@ public class VolatileEffect extends MobEffect {
                     0,
                     0,
                     0);
-
     }
 
     @Override
     public boolean isDurationEffectTick(int duration, int amplifier) {
-        return duration % 30 == 0;
+        int k = 50 >> amplifier;
+        if (k > 0) {
+            return duration % k == 0;
+        } else {
+            return true;
+        }
     }
 }
