@@ -7,7 +7,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.toxevo.alcd.ALCD;
-import net.toxevo.alcd.effect.complex.Volatile.VolatileEffect;
+import net.toxevo.alcd.effect.complex.blissful_frost_effect.BlissfulFrostEffect;
+import net.toxevo.alcd.effect.complex.volatile_effect.VolatileEffect;
 
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS
@@ -18,6 +19,9 @@ public class ModEffects {
 
     public static final RegistryObject<MobEffect> VOLATILE = MOB_EFFECTS.register("volatile",
             () -> new VolatileEffect(MobEffectCategory.HARMFUL, 16744576));
+
+    public static final RegistryObject<MobEffect> BLISSFUL_FROST = MOB_EFFECTS.register("blissful_frost",
+            () -> new BlissfulFrostEffect(MobEffectCategory.BENEFICIAL, 5335039));
 
     public static void register(IEventBus eventBus) {
         MOB_EFFECTS.register(eventBus);

@@ -22,6 +22,10 @@ public class ModPotions {
             () -> new Potion(new MobEffectInstance(ModEffects.VOLATILE.get(), 200, 0,
                     false, false)));
 
+    public static final RegistryObject<Potion> BLISSFUL_FROST_POTION = POTIONS.register("blissful_frost_potion",
+            () -> new Potion(new MobEffectInstance(ModEffects.BLISSFUL_FROST.get(), 200, 0,
+                    false, false)));
+
     public static void register(IEventBus eventBus) {
         POTIONS.register(eventBus);
     }

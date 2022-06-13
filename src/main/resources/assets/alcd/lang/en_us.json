@@ -1,17 +1,25 @@
 {
   "item.alcd.volatile_petal": "Volatile Petal",
 
+
   "item.minecraft.potion.effect.freeze_potion": "Freeze Potion",
   "item.minecraft.splash_potion.effect.freeze_potion": "Splash Potion of Freeze",
   "item.minecraft.lingering_potion.effect.freeze_potion": "Lingering Potion of Freeze",
+
   "item.minecraft.potion.effect.volatile_potion": "Volatile Potion",
   "item.minecraft.splash_potion.effect.volatile_potion": "Splash Potion of Volatility",
   "item.minecraft.lingering_potion.effect.volatile_potion": "Lingering Potion of Volatility",
 
+  "item.minecraft.potion.effect.blissful_frost_potion": "Volatile Blissful Frost",
+  "item.minecraft.splash_potion.effect.blissful_frost_potion": "Splash Potion of Blissful Frost",
+  "item.minecraft.lingering_potion.effect.blissful_frost_potion": "Lingering Potion of Blissful Frost",
 
   "itemGroup.alcdtab": "Alchemist's Dream",
 
-  "effect.alcd.freeze": "Freeze",
-  "effect.alcd.volatile": "Volatile"
 
+  "effect.alcd.freeze": "Freeze",
+
+  "effect.alcd.volatile": "Volatile",
+
+  "effect.alcd.blissful_frost": "Blissful Frost"
 }

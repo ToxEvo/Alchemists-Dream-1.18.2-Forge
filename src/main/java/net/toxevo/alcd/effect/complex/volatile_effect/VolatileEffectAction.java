@@ -1,5 +1,6 @@
-package net.toxevo.alcd.effect.complex.Volatile;
+package net.toxevo.alcd.effect.complex.volatile_effect;
 
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
@@ -15,7 +16,7 @@ import java.util.List;
 import java.util.Comparator;
 
 public class VolatileEffectAction {
-	public static void action(LevelAccessor world, double x, double y, double z, Entity entity, int amp) {
+	public static void action(LevelAccessor world, double x, double y, double z, Entity entity, int amplifier) {
 		if (entity == null)
 			return;
 		if (world instanceof Level level && !level.isClientSide())
@@ -26,9 +27,14 @@ public class VolatileEffectAction {
 								.inflate(8 / 2d), e -> true).stream()
 						.sorted(Comparator.comparingDouble(_entity -> _entity.distanceToSqr(center))).toList();
 				for (Entity entityInRadius : entitiesInRadius) {
-					if (entityInRadius instanceof LivingEntity lEntity)
-						lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(),
-								100, amp, (false), (false)));
+					if (!(entityInRadius instanceof Player)) {
+						if (entityInRadius instanceof LivingEntity lEntity)
+							lEntity.addEffect(new MobEffectInstance(ModEffects.VOLATILE.get(),
+									100,
+									amplifier,
+									false,
+									false));
+					}
 				}
 		}
 	}

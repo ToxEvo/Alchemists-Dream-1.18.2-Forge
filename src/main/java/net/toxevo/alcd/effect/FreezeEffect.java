@@ -16,39 +16,29 @@ public class FreezeEffect extends MobEffect {
     @Override
     public void applyEffectTick(LivingEntity entity, int amplifier) {
         if (!entity.level.isClientSide()) {
-            Double x = entity.getX();
-            Double y = entity.getY();
-            Double z = entity.getZ();
+            double x = entity.getX();
+            double y = entity.getY();
+            double z = entity.getZ();
 
             entity.teleportTo(x, y, z);
             entity.setDeltaMovement(0, 0, 0);
         super.applyEffectTick(entity, amplifier);
-        spawnFreezeParticle(entity.level, entity.getX(), entity.getY(), entity.getZ());
+        spawnFreezeParticle(entity.level, entity.getX(), entity.getEyeY(), entity.getZ());
         }
     }
 
     public static void spawnFreezeParticle(LevelAccessor world, double x, double y, double z) {
         for (int i = 0; i < 360; i++) {
-            if (i % 20 == 0) {
+            if (i % 80 == 0) {
                 if (world instanceof ServerLevel _level)
                     _level.sendParticles(ModParticles.FREEZE_PARTICLES.get(),
                             x + 0,
-                            y + 2,
+                            y + 0.5,
                             z + 0,
-                            1,
-                            Math.cos(i),
                             0,
-                            Math.sin(i),
-                            -0.15d);
-                if (world instanceof ServerLevel _level)
-                    _level.sendParticles(ModParticles.FREEZE_PARTICLES.get(),
-                            x + 0,
-                            y + 0,
-                            z + 0,
-                            1,
-                            Math.cos(i),
                             0,
-                            Math.sin(i),
+                            0,
+                            0,
                             0.15d);
             }
         }
