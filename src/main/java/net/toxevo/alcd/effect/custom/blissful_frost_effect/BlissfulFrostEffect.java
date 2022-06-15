@@ -1,4 +1,4 @@
-package net.toxevo.alcd.effect.complex.blissful_frost_effect;
+package net.toxevo.alcd.effect.custom.blissful_frost_effect;
 
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectCategory;
@@ -10,11 +10,9 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 import net.toxevo.alcd.effect.ModEffects;
-import net.toxevo.alcd.effect.complex.volatile_effect.VolatileEffectAction;
 
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BlissfulFrostEffect extends MobEffect {
     public BlissfulFrostEffect(MobEffectCategory p_19451_, int p_19452_) {

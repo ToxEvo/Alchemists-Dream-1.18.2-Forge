@@ -2,9 +2,12 @@ package net.toxevo.alcd.event;
 
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
+import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.toxevo.alcd.ALCD;
+import net.toxevo.alcd.entity.ModEntityTypes;
+import net.toxevo.alcd.entity.custom.RaccoonEntity;
 import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.particle.custom.FreezeParticles;
 import net.toxevo.alcd.particle.custom.VolatileParticles;
@@ -19,5 +22,10 @@ public class ModEventBusEvents {
 
         Minecraft.getInstance().particleEngine.register(ModParticles.FREEZE_PARTICLES.get(),
                 FreezeParticles.Provider::new);
+    }
+
+    @SubscribeEvent
+    public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
+        event.put(ModEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
     }
 }

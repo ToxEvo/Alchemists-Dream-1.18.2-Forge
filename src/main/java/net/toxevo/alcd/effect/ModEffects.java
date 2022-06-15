@@ -7,8 +7,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.toxevo.alcd.ALCD;
-import net.toxevo.alcd.effect.complex.blissful_frost_effect.BlissfulFrostEffect;
-import net.toxevo.alcd.effect.complex.volatile_effect.VolatileEffect;
+import net.toxevo.alcd.effect.custom.blissful_frost_effect.BlissfulFrostEffect;
+import net.toxevo.alcd.effect.custom.volatile_effect.VolatileEffect;
 
 public class ModEffects {
     public static final DeferredRegister<MobEffect> MOB_EFFECTS
