@@ -14,8 +14,9 @@
   "item.minecraft.splash_potion.effect.blissful_frost_potion": "Splash Potion of Blissful Frost",
   "item.minecraft.lingering_potion.effect.blissful_frost_potion": "Lingering Potion of Blissful Frost",
 
-  "itemGroup.alcdtab": "Alchemist's Dream",
+  "item.alcd.raccoon_spawn_egg": "Raccoon Spawn Egg",
 
+  "itemGroup.alcdtab": "Alchemist's Dream",
 
   "effect.alcd.freeze": "Freeze",
 
