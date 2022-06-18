@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "alcd:block/alchemy_table_block", "y": 180 },
+    "facing=east": { "model": "alcd:block/alchemy_table_block", "y": 90 },
+    "facing=south": { "model": "alcd:block/alchemy_table_block", "y": 0 },
+    "facing=west": { "model": "alcd:block/alchemy_table_block", "y": 270 }
+  }
+}

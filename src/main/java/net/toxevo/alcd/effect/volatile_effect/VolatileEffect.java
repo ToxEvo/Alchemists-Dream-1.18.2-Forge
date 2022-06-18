@@ -1,4 +1,4 @@
-package net.toxevo.alcd.effect.custom.volatile_effect;
+package net.toxevo.alcd.effect.volatile_effect;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;

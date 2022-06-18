@@ -1,6 +1,8 @@
 package net.toxevo.alcd;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -9,6 +11,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.toxevo.alcd.block.ModBlocks;
 import net.toxevo.alcd.effect.ModEffects;
 import net.toxevo.alcd.entity.ModEntityTypes;
 import net.toxevo.alcd.entity.client.RaccoonRenderer;
@@ -32,6 +35,7 @@ public class ALCD
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(eventBus);
+        ModBlocks.register(eventBus);
 
         ModEffects.register(eventBus);
         ModPotions.register(eventBus);
@@ -52,6 +56,8 @@ public class ALCD
 
     private void clientSetup(final FMLClientSetupEvent event) {
         EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.ALCHEMY_TABLE_BLOCK.get(), RenderType.cutout());
     }
 
     private void setup(final FMLCommonSetupEvent event)

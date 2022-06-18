@@ -1,4 +1,4 @@
-package net.toxevo.alcd.effect.custom.volatile_effect;
+package net.toxevo.alcd.effect.volatile_effect;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.phys.Vec3;

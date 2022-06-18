@@ -1,4 +1,4 @@
-package net.toxevo.alcd.effect;
+package net.toxevo.alcd.effect.freeze_effect;
 
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.effect.MobEffect;
