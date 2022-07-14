@@ -7,22 +7,22 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.toxevo.alcd.ALCD;
-import net.toxevo.alcd.entity.custom.RaccoonEntity;
+import net.toxevo.alcd.entity.custom.FrogEntity;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
 
-public class RaccoonRenderer extends GeoEntityRenderer<RaccoonEntity> {
-    public RaccoonRenderer(EntityRendererProvider.Context renderManager) {
-        super(renderManager, new RaccoonModel());
+public class FrogRenderer extends GeoEntityRenderer<FrogEntity> {
+    public FrogRenderer(EntityRendererProvider.Context renderManager) {
+        super(renderManager, new FrogModel());
         this.shadowRadius = 0.3f;
     }
 
     @Override
-    public ResourceLocation getTextureLocation(RaccoonEntity instance) {
-        return new ResourceLocation(ALCD.MOD_ID, "textures/entity/raccoon/raccoon.png");
+    public ResourceLocation getTextureLocation(FrogEntity instance) {
+        return new ResourceLocation(ALCD.MOD_ID, "textures/entity/raccoon/frog.png");
     }
 
     @Override
-    public RenderType getRenderType(RaccoonEntity animatable, float partialTicks, PoseStack stack,
+    public RenderType getRenderType(FrogEntity animatable, float partialTicks, PoseStack stack,
                                     MultiBufferSource renderTypeBuffer, VertexConsumer vertexBuilder, int packedLightIn,
                                     ResourceLocation textureLocation) {
         stack.scale(0.8F, 0.8F, 0.8F);

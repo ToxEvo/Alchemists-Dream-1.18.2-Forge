@@ -14,7 +14,7 @@
   "item.minecraft.splash_potion.effect.blissful_frost_potion": "Splash Potion of Blissful Frost",
   "item.minecraft.lingering_potion.effect.blissful_frost_potion": "Lingering Potion of Blissful Frost",
 
-  "item.alcd.raccoon_spawn_egg": "Raccoon Spawn Egg",
+  "item.alcd.frog_spawn_egg": "Frog Spawn Egg",
 
   "block.alcd.alchemy_table_block": "Alchemy Table",
 
@@ -24,5 +24,7 @@
 
   "effect.alcd.volatile": "Volatile",
 
-  "effect.alcd.blissful_frost": "Blissful Frost"
+  "effect.alcd.blissful_frost": "Blissful Frost",
+
+  "entity.alcd.frog": "Frog"
 }

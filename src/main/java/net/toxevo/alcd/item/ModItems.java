@@ -16,8 +16,8 @@ public class ModItems {
     public static final RegistryObject<Item> VOLATILE_PETAL = ITEMS.register("volatile_petal",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.ALCD_TAB)));
 
-    public static final RegistryObject<Item> RACCOON_SPAWN_EGG = ITEMS.register("raccoon_spawn_egg",
-            () -> new ForgeSpawnEggItem(ModEntityTypes.RACCOON,0x948e8d, 0x3b3635,
+    public static final RegistryObject<Item> FROG_SPAWN_EGG = ITEMS.register("frog_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.FROG,0x948e8d, 0x3b3635,
                     new Item.Properties().tab(ModCreativeModeTab.ALCD_TAB)));
 
     public static void register(IEventBus eventBus) {

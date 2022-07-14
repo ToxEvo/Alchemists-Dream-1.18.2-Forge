@@ -7,7 +7,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.toxevo.alcd.ALCD;
 import net.toxevo.alcd.entity.ModEntityTypes;
-import net.toxevo.alcd.entity.custom.RaccoonEntity;
+import net.toxevo.alcd.entity.custom.FrogEntity;
 import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.particle.custom.FreezeParticles;
 import net.toxevo.alcd.particle.custom.VolatileParticles;
@@ -26,6 +26,6 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.RACCOON.get(), RaccoonEntity.setAttributes());
+        event.put(ModEntityTypes.FROG.get(), FrogEntity.setAttributes());
     }
 }

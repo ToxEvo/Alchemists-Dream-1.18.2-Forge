@@ -14,7 +14,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.toxevo.alcd.block.ModBlocks;
 import net.toxevo.alcd.effect.ModEffects;
 import net.toxevo.alcd.entity.ModEntityTypes;
-import net.toxevo.alcd.entity.client.RaccoonRenderer;
+import net.toxevo.alcd.entity.client.FrogRenderer;
 import net.toxevo.alcd.item.ModItems;
 import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.potion.ModPotions;
@@ -55,7 +55,7 @@ public class ALCD
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {
-        EntityRenderers.register(ModEntityTypes.RACCOON.get(), RaccoonRenderer::new);
+        EntityRenderers.register(ModEntityTypes.FROG.get(), FrogRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ALCHEMY_TABLE_BLOCK.get(), RenderType.cutout());
     }
