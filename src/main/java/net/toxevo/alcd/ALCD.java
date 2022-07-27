@@ -1,6 +1,7 @@
 package net.toxevo.alcd;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -12,12 +13,15 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.toxevo.alcd.block.ModBlocks;
+import net.toxevo.alcd.block.entity.ModBlockEntities;
 import net.toxevo.alcd.effect.ModEffects;
 import net.toxevo.alcd.entity.ModEntityTypes;
 import net.toxevo.alcd.entity.client.FrogRenderer;
 import net.toxevo.alcd.item.ModItems;
 import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.potion.ModPotions;
+import net.toxevo.alcd.screen.AlchemyTableScreen;
+import net.toxevo.alcd.screen.ModMenuTypes;
 import org.slf4j.Logger;
 import software.bernie.geckolib3.GeckoLib;
 
@@ -44,6 +48,10 @@ public class ALCD
 
         ModEntityTypes.register(eventBus);
 
+        ModBlockEntities.register(eventBus);
+
+        ModMenuTypes.register(eventBus);
+
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
 
@@ -58,6 +66,8 @@ public class ALCD
         EntityRenderers.register(ModEntityTypes.FROG.get(), FrogRenderer::new);
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.ALCHEMY_TABLE_BLOCK.get(), RenderType.cutout());
+
+        MenuScreens.register(ModMenuTypes.ALCHEMY_TABLE_MENU.get(), AlchemyTableScreen::new);
     }
 
     private void setup(final FMLCommonSetupEvent event)
