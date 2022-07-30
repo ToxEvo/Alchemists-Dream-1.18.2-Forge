@@ -15,7 +15,7 @@ public class ModMenuTypes {
             DeferredRegister.create(ForgeRegistries.CONTAINERS, ALCD.MOD_ID);
 
     public static final RegistryObject<MenuType<AlchemyTableMenu>> ALCHEMY_TABLE_MENU =
-            registerMenuType(AlchemyTableMenu::new, "gem_cutting_station_menu");
+            registerMenuType(AlchemyTableMenu::new, "alchemy_table_menu");
 
 
 

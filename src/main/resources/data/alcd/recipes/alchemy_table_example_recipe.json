@@ -1,0 +1,17 @@
+{
+  "type": "alcd:alchemy_table",
+  "ingredients": [
+    {
+      "item": "alcd:volatile_petal"
+    },
+    {
+      "item": "alcd:volatile_petal"
+    },
+    {
+      "item": "alcd:volatile_petal"
+    }
+  ],
+  "output": {
+    "item": "alcd:volatile_petal"
+  }
+}

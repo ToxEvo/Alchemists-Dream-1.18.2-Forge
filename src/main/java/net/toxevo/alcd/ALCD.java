@@ -20,6 +20,7 @@ import net.toxevo.alcd.entity.client.FrogRenderer;
 import net.toxevo.alcd.item.ModItems;
 import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.potion.ModPotions;
+import net.toxevo.alcd.recipe.ModRecipes;
 import net.toxevo.alcd.screen.AlchemyTableScreen;
 import net.toxevo.alcd.screen.ModMenuTypes;
 import org.slf4j.Logger;
@@ -47,10 +48,10 @@ public class ALCD
         ModParticles.register(eventBus);
 
         ModEntityTypes.register(eventBus);
-
         ModBlockEntities.register(eventBus);
 
         ModMenuTypes.register(eventBus);
+        ModRecipes.register(eventBus);
 
         eventBus.addListener(this::setup);
         eventBus.addListener(this::clientSetup);
