@@ -1,0 +1,14 @@
+{
+  "type": "alcd:alchemy_table2",
+  "ingredients": [
+    {
+      "item": "minecraft:apple"
+    },
+    {
+      "item": "minecraft:bone"
+    }
+  ],
+  "output": {
+    "item": "minecraft:apple"
+  }
+}

@@ -14,7 +14,8 @@ import net.toxevo.alcd.entity.custom.FrogEntity;
 import net.toxevo.alcd.particle.ModParticles;
 import net.toxevo.alcd.particle.custom.FreezeParticles;
 import net.toxevo.alcd.particle.custom.VolatileParticles;
-import net.toxevo.alcd.recipe.AlchemyTableRecipe;
+import net.toxevo.alcd.recipe.AlchemyTableRecipe2;
+import net.toxevo.alcd.recipe.AlchemyTableRecipe3;
 
 @Mod.EventBusSubscriber(modid = ALCD.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEventBusEvents {
@@ -35,6 +36,7 @@ public class ModEventBusEvents {
 
     @SubscribeEvent
     public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event) {
-        Registry.register(Registry.RECIPE_TYPE, AlchemyTableRecipe.Type.ID, AlchemyTableRecipe.Type.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, AlchemyTableRecipe3.Type.ID, AlchemyTableRecipe3.Type.INSTANCE);
+        Registry.register(Registry.RECIPE_TYPE, AlchemyTableRecipe2.Type.ID, AlchemyTableRecipe2.Type.INSTANCE);
     }
 }

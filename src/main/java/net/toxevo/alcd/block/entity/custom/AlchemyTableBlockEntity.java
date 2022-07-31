@@ -22,14 +22,14 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.toxevo.alcd.block.entity.ModBlockEntities;
-import net.toxevo.alcd.recipe.AlchemyTableRecipe;
+import net.toxevo.alcd.recipe.AlchemyTableRecipe2;
+import net.toxevo.alcd.recipe.AlchemyTableRecipe3;
 import net.toxevo.alcd.screen.AlchemyTableMenu;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.annotation.Nonnull;
 import java.util.Optional;
-import java.util.Random;
 
 public class AlchemyTableBlockEntity extends BlockEntity implements MenuProvider {
     private final ItemStackHandler itemHandler = new ItemStackHandler(4) {
@@ -145,11 +145,16 @@ public class AlchemyTableBlockEntity extends BlockEntity implements MenuProvider
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<AlchemyTableRecipe> match = level.getRecipeManager()
-                .getRecipeFor(AlchemyTableRecipe.Type.INSTANCE, inventory, level);
+        Optional<AlchemyTableRecipe2> match2 = level.getRecipeManager()
+                .getRecipeFor(AlchemyTableRecipe2.Type.INSTANCE, inventory, level);
 
-        return match.isPresent() && canInsertAmountIntoOutputSlot(inventory)
-                && canInsertItemIntoOutputSlot(inventory, match.get().getResultItem());
+        Optional<AlchemyTableRecipe3> match3 = level.getRecipeManager()
+                .getRecipeFor(AlchemyTableRecipe3.Type.INSTANCE, inventory, level);
+
+        return (match3.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                && canInsertItemIntoOutputSlot(inventory, match3.get().getResultItem()) ||
+                match2.isPresent() && canInsertAmountIntoOutputSlot(inventory)
+                        && canInsertItemIntoOutputSlot(inventory, match2.get().getResultItem()));
     }
 
     private static void craftItem(AlchemyTableBlockEntity entity) {
@@ -159,15 +164,28 @@ public class AlchemyTableBlockEntity extends BlockEntity implements MenuProvider
             inventory.setItem(i, entity.itemHandler.getStackInSlot(i));
         }
 
-        Optional<AlchemyTableRecipe> match = level.getRecipeManager()
-                .getRecipeFor(AlchemyTableRecipe.Type.INSTANCE, inventory, level);
+        Optional<AlchemyTableRecipe2> match2 = level.getRecipeManager()
+                .getRecipeFor(AlchemyTableRecipe2.Type.INSTANCE, inventory, level);
 
-        if(match.isPresent()) {
+        Optional<AlchemyTableRecipe3> match3 = level.getRecipeManager()
+                .getRecipeFor(AlchemyTableRecipe3.Type.INSTANCE, inventory, level);
+
+        if(match2.isPresent()) {
+            entity.itemHandler.extractItem(0,1, false);
+            entity.itemHandler.extractItem(1,1, false);
+
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match2.get().getResultItem().getItem(),
+                    entity.itemHandler.getStackInSlot(3).getCount() + 1));
+
+            entity.resetProgress();
+        }
+
+        if(match3.isPresent()) {
             entity.itemHandler.extractItem(0,1, false);
             entity.itemHandler.extractItem(1,1, false);
             entity.itemHandler.extractItem(2,1, false);
 
-            entity.itemHandler.setStackInSlot(3, new ItemStack(match.get().getResultItem().getItem(),
+            entity.itemHandler.setStackInSlot(3, new ItemStack(match3.get().getResultItem().getItem(),
                     entity.itemHandler.getStackInSlot(3).getCount() + 1));
 
             entity.resetProgress();

@@ -1,5 +1,5 @@
 {
-  "type": "alcd:alchemy_table",
+  "type": "alcd:alchemy_table3",
   "ingredients": [
     {
       "item": "alcd:volatile_petal"

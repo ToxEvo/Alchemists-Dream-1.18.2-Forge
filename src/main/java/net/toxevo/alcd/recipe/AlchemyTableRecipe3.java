@@ -14,13 +14,13 @@ import net.toxevo.alcd.ALCD;
 
 import javax.annotation.Nullable;
 
-public class AlchemyTableRecipe implements Recipe<SimpleContainer> {
+public class AlchemyTableRecipe3 implements Recipe<SimpleContainer> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> recipeItems;
 
-    public AlchemyTableRecipe(ResourceLocation id, ItemStack output,
-                                   NonNullList<Ingredient> recipeItems) {
+    public AlchemyTableRecipe3(ResourceLocation id, ItemStack output,
+                               NonNullList<Ingredient> recipeItems) {
         this.id = id;
         this.output = output;
         this.recipeItems = recipeItems;
@@ -28,7 +28,7 @@ public class AlchemyTableRecipe implements Recipe<SimpleContainer> {
 
     @Override
     public boolean matches(SimpleContainer pContainer, Level pLevel) {
-        return recipeItems.get(0).test(pContainer.getItem(0))&&
+        return recipeItems.get(0).test(pContainer.getItem(0)) &&
                 recipeItems.get(1).test(pContainer.getItem(1)) &&
                 recipeItems.get(2).test(pContainer.getItem(2));
     }
@@ -63,19 +63,19 @@ public class AlchemyTableRecipe implements Recipe<SimpleContainer> {
         return Type.INSTANCE;
     }
 
-    public static class Type implements RecipeType<AlchemyTableRecipe> {
+    public static class Type implements RecipeType<AlchemyTableRecipe3> {
         private Type() { }
         public static final Type INSTANCE = new Type();
-        public static final String ID = "alchemy_table";
+        public static final String ID = "alchemy_table3";
     }
 
-    public static class Serializer implements RecipeSerializer<AlchemyTableRecipe> {
+    public static class Serializer implements RecipeSerializer<AlchemyTableRecipe3> {
         public static final Serializer INSTANCE = new Serializer();
         public static final ResourceLocation ID =
-                new ResourceLocation(ALCD.MOD_ID,"alchemy_table");
+                new ResourceLocation(ALCD.MOD_ID,"alchemy_table3");
 
         @Override
-        public AlchemyTableRecipe fromJson(ResourceLocation id, JsonObject json) {
+        public AlchemyTableRecipe3 fromJson(ResourceLocation id, JsonObject json) {
             ItemStack output = ShapedRecipe.itemStackFromJson(GsonHelper.getAsJsonObject(json, "output"));
 
             JsonArray ingredients = GsonHelper.getAsJsonArray(json, "ingredients");
@@ -85,11 +85,11 @@ public class AlchemyTableRecipe implements Recipe<SimpleContainer> {
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
 
-            return new AlchemyTableRecipe(id, output, inputs);
+            return new AlchemyTableRecipe3(id, output, inputs);
         }
 
         @Override
-        public AlchemyTableRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
+        public AlchemyTableRecipe3 fromNetwork(ResourceLocation id, FriendlyByteBuf buf) {
             NonNullList<Ingredient> inputs = NonNullList.withSize(buf.readInt(), Ingredient.EMPTY);
 
             for (int i = 0; i < inputs.size(); i++) {
@@ -97,11 +97,11 @@ public class AlchemyTableRecipe implements Recipe<SimpleContainer> {
             }
 
             ItemStack output = buf.readItem();
-            return new AlchemyTableRecipe(id, output, inputs);
+            return new AlchemyTableRecipe3(id, output, inputs);
         }
 
         @Override
-        public void toNetwork(FriendlyByteBuf buf, AlchemyTableRecipe recipe) {
+        public void toNetwork(FriendlyByteBuf buf, AlchemyTableRecipe3 recipe) {
             buf.writeInt(recipe.getIngredients().size());
             for (Ingredient ing : recipe.getIngredients()) {
                 ing.toNetwork(buf);
